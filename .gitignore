@@ -131,3 +131,6 @@ dmypy.json
 # Credenciais da Google API
 credentials.json
 token.pickle
+
+# Ignorando o dataset
+seed_2021_1.csv
