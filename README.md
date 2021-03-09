@@ -35,6 +35,7 @@ Antes de começar, você precisa ter o [Python](https://www.python.org/downloads
 
 Você precisará também ter um arquivo credentials.json que armazene os valores da sua credencial para a API do [Google Calendar](https://developers.google.com/calendar/quickstart/python). 
 
+
 ### 🍳 Preparando o ambiente
 
 ```bash
@@ -48,7 +49,7 @@ $ mv * google_agenda/
 $ cd google_agenda/
 
 # Instale as dependências
-$ source bim/activate
+$ source bin/activate
 
 # Instalando as dependências
 $ pip install -r requirements.txt
