@@ -25,6 +25,9 @@ Tabela de Conteúdos
 
 - [x] Listar próximos eventos
 - [x] Criar um evento e convidar pessoas da organização
+- [ ] Adicionar os funcionários da Seed ao evento sem precisar digitar o email completo
+- [ ] Melhorar a forma de passar a data de início e tempo de duração na criação do evento
+- [ ] Criar uma flag para cada projeto atual
 - [ ] Cancelar um evento
 - [ ] Atualizar um evento
 

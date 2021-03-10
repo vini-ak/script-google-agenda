@@ -101,6 +101,8 @@ class GoogleAgenda:
                 emails = emailMembros.getEmails(area)
             elif area == "all":
                 emails = emailMembros.getAllEmails()
+            elif area == "pupylex":
+                emails = ["vinicius.vieira@seedabit.org.br", "isadora.tavares@seedabit.org.br", "vinicius.cirne@seedabit.org.br", "manussa.raphaela@seedabit.org.br", "igor.macedo@seedabit.org.br", "rafaella.jordao@seedabit.org.br"]
             else:
                 raise Exception("Não foi possível recuperar os emails da área. Tag passada (%s) não é uma área da Seed." % sys.argv)
 
