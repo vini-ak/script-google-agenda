@@ -17,6 +17,7 @@ from google.auth.transport.requests import Request
 from modules.emails import EmailsMembros
 from modules.calendar import Calendar
 from modules.format_time import DateTimeFormater
+from modules.format_time import TimeCalculator
 
 
 class GoogleAgenda:
@@ -82,14 +83,19 @@ class GoogleAgenda:
         
         date_time_formater = DateTimeFormater()
         startInBR = input("Horário do evento: ")
+        
         # Formatando o início para ficar em um formato aceito
+        endMinutes = int(input("Término do evento (tempo em minutos): "))
+        
+        time_calculator = TimeCalculator(startInBR)
+        endInUTC = time_calculator.add(endMinutes)
+        print(endInUTC)
+
         startInUTC = date_time_formater.parse(startInBR)
         start = startInUTC.replace(" ", "T") + ":00-03:00" 
+        end = endInUTC.replace(" ", "T") + "-03:00"
 
-        endInBR = input("Término do evento: ")
         # Formatando o fim para ficar em um formato aceito
-        endInUTC =  date_time_formater.parse(endInBR)
-        end = endInUTC.replace(" ", "T") + ":00-03:00" 
 
         emailMembros = EmailsMembros()
 
@@ -124,11 +130,7 @@ class GoogleAgenda:
         agenda = Calendar(self.credentials)
         agenda.createEvent(titulo, start=start, end=end, emails=emails)
 
-        
-
-
-
-
+    
 def main():
     ''' Retornando os próximos eventos. '''
 

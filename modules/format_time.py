@@ -14,3 +14,14 @@ class DateTimeFormater:
         dataParsed = self.parseData(data)
         return dataParsed + " " + hora
 
+
+class TimeCalculator:
+    def __init__(self, data_inicio):
+        self._data_inicio = datetime.datetime.strptime(data_inicio
+    , "%d/%m/%Y %H:%M")
+
+    def add(self, minutes):
+        time_change = datetime.timedelta(minutes=minutes)
+        result = self._data_inicio + time_change
+        return str(result)
+        
